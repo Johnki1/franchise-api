@@ -1,0 +1,40 @@
+---
+- name: Configurar EC2 para Franchise API
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Actualizar el sistema
+      apt:
+        update_cache: yes
+
+    - name: Instalar dependencias necesarias
+      apt:
+        name:
+          - git
+          - docker.io
+          - curl
+        state: present
+
+    - name: Agregar usuario ubuntu al grupo docker
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Descargar Docker Compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: '0755'
+
+    - name: Clonar el repositorio del proyecto
+      git:
+        repo: https://github.com/Johnki1/franchise-api.git
+        dest: /home/ubuntu/franchise-api
+        update: yes
+
+    - name: Levantar contenedores con Docker Compose
+      shell: docker-compose up -d
+      args:
+        chdir: /home/ubuntu/franchise-api
