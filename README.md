@@ -11,7 +11,7 @@ Desarrollada en **Java + Spring Boot WebFlux + MongoDB**, con despliegue automat
 
 ```
 
-[http://44.204.72.134:8080/api/franchise](http://44.204.72.134:8080/api/franchise)
+[http://44.204.72.134:8080/api/franchise]
 
 ```
 
@@ -58,7 +58,7 @@ Puedes usar [Insomnia](https://insomnia.rest/) o [Postman](https://www.postman.c
 
 ```
 
-[http://44.204.72.134:8080/api/franchise](http://44.204.72.134:8080/api/franchise)
+[http://44.204.72.134:8080/api/franchise]
 
 ```
 
@@ -154,8 +154,11 @@ GET /api/franchise
 ## 💻 Cómo ejecutar localmente
 
 ### 1. Clonar el proyecto
+### Requisito para clonar el repositorio
+*git
 
 ```bash
+git init
 git clone https://github.com/Johnki1/franchise-api.git
 cd franchise-api
 ````
@@ -211,7 +214,7 @@ franchise-api/
 │   │   ├── repository/         # Repositorio MongoDB
 │   │   └── service/            # Lógica de negocio
 │   └── test/java/com/example/franchise/
-│       └── FranchiseServiceTest.java
+│       └── FranchiseServiceTest.java # pruebas
 ├── pom.xml                     # Dependencias del proyecto
 └── README.md                   # Este archivo
 ```
@@ -221,7 +224,7 @@ franchise-api/
 ## ✅ Pruebas Unitarias
 
 ```bash
-./mvnw test
+mvn test
 ```
 
 Las pruebas están ubicadas en:
@@ -248,7 +251,3 @@ Cubren los casos más relevantes del servicio.
 🔗 [GitHub - @Johnki1](https://github.com/Johnki1)
 
 ---
-
-> Proyecto realizado con buenas prácticas, arquitectura limpia y herramientas modernas de automatización, contenedorización y desarrollo backend.
-
-```
