@@ -32,9 +32,7 @@ build/
 
 ### VS Code ###
 .vscode/
-.dockerignore
 .gitattributes
 
 .terraform
 terraform.tfvars
-.gitignore
