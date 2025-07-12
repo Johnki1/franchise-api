@@ -1,6 +1,0 @@
-target/*
-!target/franchise-0.0.1-SNAPSHOT.jar
-*.iml
-.idea/
-*.log
-.DS_Store
