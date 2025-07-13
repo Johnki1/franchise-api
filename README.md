@@ -43,7 +43,7 @@ Esta API permite:
 | Spring Boot WebFlux | Framework reactivo (no bloqueante)     |
 | MongoDB        | Base de datos NoSQL                          |
 | Docker         | Contenedores para backend y base de datos    |
-| Docker Compose | Orquestación local                           |
+| Docker Compose | Orquestación                           |
 | Terraform      | Infraestructura como código (IaC)            |
 | Ansible        | Automatización del despliegue (IaC)          |
 | Maven          | Gestión de dependencias y empaquetado        |
