@@ -155,7 +155,7 @@ GET /api/franchise
 
 ### 1. Clonar el proyecto
 ### Requisito para clonar el repositorio
-*git
+* git
 
 ```bash
 git init
@@ -247,7 +247,7 @@ Cubren los casos más relevantes del servicio.
 
 ## 👨‍💻 Autor
 
-**Jhon Kider Alzate**
+**John Kider Alzate**
 🔗 [GitHub - @Johnki1](https://github.com/Johnki1)
 
 ---
