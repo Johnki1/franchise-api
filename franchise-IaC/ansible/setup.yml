@@ -80,5 +80,5 @@
     - name: Construir y levantar contenedores con Docker Compose v2
       community.docker.docker_compose_v2:
         project_src: "{{ project_dir }}"
-        build: true
+        build: policy
         state: present
