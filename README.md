@@ -1,14 +1,15 @@
+
 # 🏪 Franchise API
 
 API REST **reactiva** para la gestión de **franquicias, sucursales y productos**, desarrollada con **Java 21 + Spring Boot WebFlux + MongoDB**.
 
 El proyecto incluye:
 
-* Backend desacoplado y no bloqueante
-* Persistencia en MongoDB
-* Contenerización con Docker
-* Automatización de despliegue en AWS usando **Terraform + Ansible**
-* Arquitectura limpia y manejo profesional de errores
+- Backend desacoplado y no bloqueante
+- Persistencia en MongoDB
+- Contenerización con Docker
+- Automatización de despliegue en AWS usando **Terraform + Ansible**
+- Arquitectura limpia y manejo profesional de errores
 
 ---
 
@@ -17,11 +18,13 @@ El proyecto incluye:
 La API está desplegada en una instancia EC2 de AWS y puede probarse desde cualquier cliente REST (Postman / Insomnia):
 
 ```
+
 http://44.204.72.134:8080/api/franchise
+
 ```
 
-⚠️ **Nota**
-El acceso está limitado exclusivamente a llamadas HTTP.
+⚠️ **Nota**  
+El acceso está limitado exclusivamente a llamadas HTTP.  
 No existe acceso directo al servidor ni a la base de datos.
 
 ---
@@ -30,16 +33,16 @@ No existe acceso directo al servidor ni a la base de datos.
 
 La API permite:
 
-* Crear franquicias
-* Listar todas las franquicias
-* Agregar sucursales a una franquicia
-* Agregar productos a una sucursal
-* Evitar entidades duplicadas (franquicias, sucursales, productos)
-* Eliminar productos
-* Actualizar stock de productos
-* Actualizar nombres (franquicia, sucursal, producto)
-* Consultar el producto con mayor stock por sucursal en una franquicia
-* Manejo centralizado y profesional de errores
+- Crear franquicias
+- Listar todas las franquicias
+- Agregar sucursales a una franquicia
+- Agregar productos a una sucursal
+- Evitar entidades duplicadas (franquicias, sucursales, productos)
+- Eliminar productos
+- Actualizar stock de productos
+- Actualizar nombres (franquicia, sucursal, producto)
+- Consultar el producto con mayor stock por sucursal en una franquicia
+- Manejo centralizado y profesional de errores
 
 ---
 
@@ -52,7 +55,7 @@ La API permite:
 | MongoDB             | Base de datos NoSQL             |
 | Spring Data MongoDB | Persistencia                    |
 | Docker              | Contenerización                 |
-| Docker Compose      | Orquestación                    |
+| Docker Compose v2   | Orquestación                    |
 | Terraform           | Infraestructura como código     |
 | Ansible             | Automatización de configuración |
 | Maven               | Gestión de dependencias         |
@@ -65,14 +68,16 @@ La API permite:
 **Base URL**
 
 ```
+
 /api/franchise
-```
+
+````
 
 ### ➕ Crear franquicia
 
 ```http
 POST /api/franchise
-```
+````
 
 ```json
 {
@@ -171,6 +176,29 @@ GET /api/franchise
 
 ---
 
+## 🧪 Pruebas de la API (Insomnia)
+
+Para facilitar la validación, el repositorio incluye un **archivo de exportación de Insomnia** con todos los endpoints ya configurados.
+
+### 📁 Archivo incluido
+
+* Export realizado en **Insomnia v5**
+* Contiene:
+
+    * Todos los endpoints
+    * Variables de entorno
+    * Base URL configurable (local / nube)
+
+### 📥 Cómo importar en Insomnia
+
+1. Abrir Insomnia
+2. Ir a **Application → Preferences → Data → Import Data**
+3. Seleccionar el archivo incluido en el repositorio
+4. Elegir el entorno deseado (local o nube)
+5. Ejecutar los endpoints directamente
+
+---
+
 ## 💻 Ejecución local
 
 ### Requisitos
@@ -237,8 +265,8 @@ franchise-api/
 ├── pom.xml
 ├── README.md
 ├── franchise-IaC/
-│   ├── terraform/       
-│   └── ansible/         
+│   ├── terraform/
+│   └── ansible/
 ├── src/
 │   ├── main/java/com/example/franchise/
 │   │   ├── controller
@@ -258,6 +286,7 @@ franchise-api/
 * Arquitectura reactiva (no bloqueante)
 * Manejo centralizado de excepciones
 * Validaciones de negocio en el servicio
+* Índices en MongoDB para evitar duplicados
 * Infraestructura reproducible mediante IaC
 
 ---
@@ -266,6 +295,6 @@ franchise-api/
 
 **Jhon Kider Alzate**
 🔗 GitHub: [https://github.com/Johnki1](https://github.com/Johnki1)
-
 ---
+
 
