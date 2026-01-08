@@ -1,0 +1,376 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Franchise-api
+meta:
+  id: wrk_7568bd84cd15411ab087e8841ef197fa
+  created: 1752359748796
+  modified: 1767908974523
+  description: ""
+collection:
+  - url: "{{ _.cloud.base_url }}"
+    name: Crear franquicia , ramas y productos
+    meta:
+      id: req_c0f5043ce7ae4103bdf597a297459e15
+      created: 1752255125660
+      modified: 1767908683824
+      isPrivate: false
+      description: ""
+      sortKey: -1752255125660
+    method: POST
+    body:
+      mimeType: application/json
+      text: |+
+        {
+          "name": "Franquicia Delicias Urbanas",
+          "branches": [
+            {
+              "name": "Sucursal Medellín",
+              "products": [
+                { "name": "Empanada", "stock": 50 },
+                { "name": "Chorizo", "stock": 30 },
+                { "name": "Arepa Rellena", "stock": 40 },
+                { "name": "Papa Rellena", "stock": 25 }
+              ]
+            },
+            {
+              "name": "Sucursal Bogotá",
+              "products": [
+                { "name": "Hamburguesa Clásica", "stock": 60 },
+                { "name": "Perro Caliente", "stock": 45 },
+                { "name": "Salchipapa", "stock": 55 },
+                { "name": "Empanada", "stock": 35 }
+              ]
+            },
+            {
+              "name": "Sucursal Cali",
+              "products": [
+                { "name": "Pandebono", "stock": 70 },
+                { "name": "Aborrajado", "stock": 40 },
+                { "name": "Empanada Valluna", "stock": 50 },
+                { "name": "Cholado", "stock": 20 }
+              ]
+            },
+            {
+              "name": "Sucursal Barranquilla",
+              "products": [
+                { "name": "Arepa de Huevo", "stock": 80 },
+                { "name": "Butifarra", "stock": 65 },
+                { "name": "Carimañola", "stock": 45 },
+                { "name": "Empanada", "stock": 30 }
+              ]
+            },
+            {
+              "name": "Sucursal Bucaramanga",
+              "products": [
+                { "name": "Mute Santandereano", "stock": 15 },
+                { "name": "Empanada de Carne Oreada", "stock": 35 },
+                { "name": "Arepa Amarilla", "stock": 50 },
+                { "name": "Tamales", "stock": 20 }
+              ]
+            }
+          ]
+        }
+
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Franquicia
+    meta:
+      id: fld_d5ffb2725a9d4eb48fbd7faa1c5ba4b2
+      created: 1752257500994
+      modified: 1752257500994
+      sortKey: -1752257500994
+      description: ""
+    children:
+      - url: http://44.204.72.134:8080/api/franchise
+        name: Crear Franquicia
+        meta:
+          id: req_430263528385473db5c8822aff24d822
+          created: 1752256431715
+          modified: 1767905725132
+          isPrivate: false
+          description: ""
+          sortKey: -1752257571190
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Franquicia desde ec2 nueva",
+              "branches": []
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}/68714fe762d256f40beca3c1/name"
+        name: Cambiar nombre de franquicia
+        meta:
+          id: req_ccb7cefd018944cabb30b29da29fabb0
+          created: 1752257125645
+          modified: 1767908699390
+          isPrivate: false
+          description: ""
+          sortKey: -1752257571090
+        method: PUT
+        body:
+          mimeType: text/plain
+          text: Franquicia Arepas y Chorizos de Jhon
+        headers:
+          - name: Content-Type
+            value: text/plain
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}"
+        name: Listar todas las franquicias
+        meta:
+          id: req_6c153102c6f54f9b93d5ba8fde40713c
+          created: 1752257763300
+          modified: 1767908704100
+          isPrivate: false
+          description: ""
+          sortKey: -1752257571140
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Producto
+    meta:
+      id: fld_0bbc7e39425a4e0ab60a9e6fd3a2760b
+      created: 1752257510109
+      modified: 1752257510109
+      sortKey: -1752257510109
+      description: ""
+    children:
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/branch/Sucursal
+          Guarne/product"
+        name: agregar producto a sucursal
+        meta:
+          id: req_21d3ddf142c346349158ae9253fe5b55
+          created: 1752256604152
+          modified: 1767908795831
+          isPrivate: false
+          description: ""
+          sortKey: -1752257532795
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "jalapeño",
+              "stock": 530
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/branch/Sucursal
+          Medellín/product/arequipe"
+        name: eliminar producto de una sucursal
+        meta:
+          id: req_edf38ae7e83d415f97fd584b241a9852
+          created: 1752256732785
+          modified: 1767908800507
+          isPrivate: false
+          description: ""
+          sortKey: -1752257532595
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/branch/Sucursal
+          Medellín/product/Empanada/stock/250"
+        name: actualizar stock
+        meta:
+          id: req_4c5c98ee9ef7444c87c749c87b5e6004
+          created: 1752256859741
+          modified: 1767908797911
+          isPrivate: false
+          description: ""
+          sortKey: -1752257532695
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/highest-stock-products"
+        name: Producto con mas stock por sucursal
+        meta:
+          id: req_b377d03e23f44554b82a6ada36395723
+          created: 1752257013458
+          modified: 1767908802602
+          isPrivate: false
+          description: ""
+          sortKey: -1752257532495
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/branch/Sucursal
+          Medellín/product/name?oldName=Chorizo&newName=arequipe"
+        name: Cambiar nombre de producto
+        meta:
+          id: req_0a97c92708c14093a31d18050f0e8624
+          created: 1752257435588
+          modified: 1767908807824
+          isPrivate: false
+          description: ""
+          sortKey: -1752257532395
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Sucursal
+    meta:
+      id: fld_dabd5b419dfc4cab85706e1de6955150
+      created: 1752257518692
+      modified: 1752257559374
+      sortKey: -1752257518692
+      description: ""
+    children:
+      - url: "{{ _.cloud.base_url }}/69601ed8e98f392dbcb521ea/branch"
+        name: agregar sucursal a franquicia
+        meta:
+          id: req_5b98719ffbc54964b3a03273ef992c42
+          created: 1752256512290
+          modified: 1767908793652
+          isPrivate: false
+          description: ""
+          sortKey: -1752257544537
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "name": "Sucursal Guarne",
+              "products": []
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.cloud.base_url
+          }}/69601ed8e98f392dbcb521ea/branch/name?oldName=Sucursal
+          Guarne&newName=Sucursal San Vicente"
+        name: Cambiar nombre de sucursal
+        meta:
+          id: req_dcf465c95d0b4456b55b72d91aa99a4d
+          created: 1752257280515
+          modified: 1767908780166
+          isPrivate: false
+          description: ""
+          sortKey: -1752257544637
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/11.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_981552f10b694d5fb3e0695940d6a832
+    created: 1752255116832
+    modified: 1752255116832
+environments:
+  name: Base Environment
+  meta:
+    id: env_79a86db3541b4629b6b38d401bd003e1
+    created: 1752255116828
+    modified: 1767908612113
+    isPrivate: false
+  data:
+    local:
+      base_url: http://localhost:8080/api/franchise
+    cloud:
+      base_url: http://44.204.72.134:8080/api/franchise
